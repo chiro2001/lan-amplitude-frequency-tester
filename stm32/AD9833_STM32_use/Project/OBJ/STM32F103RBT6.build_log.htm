@@ -1,0 +1,997 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Liang Chiro, None, LIC=QF856-DWC80-IIR5V-PZ5TX-MR37R-U1XXR
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.25.2.0
+Toolchain Path:  D:\Software\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DCM.DLL V1.17.1.0
+Target DLL:      UL2CM3.DLL V1.160.12.0
+Dialog DLL:      TCM.DLL V1.35.1.0
+ 
+<h2>Project:</h2>
+D:\Projects\电赛\AD9833\程序\AD9833 STM32 测试程序\Project\STM32.uvprojx
+Project File Date:  05/01/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Software\Keil_v5\ARM\ARMCC\Bin'
+Build target 'STM32F103XX'
+compiling stm32f10x_dbgmcu.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dbgmcu.c(137): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DBGMCU_PERIPH(DBGMCU_Periph));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dbgmcu.c: 1 warning, 0 errors
+compiling stm32f10x_it.c...
+compiling systemconfig.c...
+..\USER\SRC\systemconfig.c(17): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+  	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB, ENABLE); 
+..\USER\SRC\systemconfig.c(17): error:  #20: identifier "RCC_APB2Periph_GPIOA" is undefined
+  	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB, ENABLE); 
+..\USER\SRC\systemconfig.c(17): error:  #20: identifier "RCC_APB2Periph_GPIOB" is undefined
+  	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB, ENABLE); 
+..\USER\SRC\systemconfig.c(20): error:  #20: identifier "RCC_APB2Periph_AFIO" is undefined
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);
+..\USER\SRC\systemconfig.c(23): error:  #20: identifier "RCC_APB2Periph_USART1" is undefined
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
+..\USER\SRC\systemconfig.c(38): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+  	GPIO_InitTypeDef GPIO_InitStructure;
+..\USER\SRC\systemconfig.c(40): warning:  #223-D: function "GPIO_PinRemapConfig" declared implicitly
+  	GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable , ENABLE);//使能SWJ，禁止 JTAG
+..\USER\SRC\systemconfig.c(40): error:  #20: identifier "GPIO_Remap_SWJ_JTAGDisable" is undefined
+  	GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable , ENABLE);//使能SWJ，禁止 JTAG
+..\USER\SRC\systemconfig.c(42): error:  #20: identifier "GPIO_Pin_0" is undefined
+   	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_1;  //LED1,LED2
+..\USER\SRC\systemconfig.c(42): error:  #20: identifier "GPIO_Pin_1" is undefined
+   	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_1;  //LED1,LED2
+..\USER\SRC\systemconfig.c(43): error:  #20: identifier "GPIO_Speed_10MHz" is undefined
+  	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_10MHz;
+..\USER\SRC\systemconfig.c(44): error:  #20: identifier "GPIO_Mode_Out_PP" is undefined
+  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+..\USER\SRC\systemconfig.c(45): warning:  #223-D: function "GPIO_Init" declared implicitly
+  	GPIO_Init(GPIOB, &GPIO_InitStructure);
+..\USER\SRC\systemconfig.c(47): error:  #20: identifier "GPIO_Pin_2" is undefined
+  	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
+..\USER\SRC\systemconfig.c(48): error:  #20: identifier "GPIO_Mode_IPU" is undefined
+  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;		  //key
+..\USER\SRC\systemconfig.c(54): error:  #20: identifier "GPIO_Pin_10" is undefined
+  	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;             //RX
+..\USER\SRC\systemconfig.c(55): error:  #20: identifier "GPIO_Mode_IN_FLOATING" is undefined
+  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+..\USER\SRC\systemconfig.c(58): error:  #20: identifier "GPIO_Pin_9" is undefined
+  	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;              //TX
+..\USER\SRC\systemconfig.c(59): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+  	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+..\USER\SRC\systemconfig.c(60): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+..\USER\SRC\systemconfig.c: 3 warnings, 17 errors
+compiling stm32f10x_bkp.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c(137): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_BKP_TAMPER_PIN_LEVEL(BKP_TamperPinLevel));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c(150): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c(163): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c(184): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_BKP_RTC_OUTPUT_SOURCE(BKP_RTCOutputSource));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c(205): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_BKP_CALIBRATION_VALUE(CalibrationValue));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c(227): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_BKP_DR(BKP_DR));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c(246): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_BKP_DR(BKP_DR));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c: 7 warnings, 0 errors
+compiling stm32f10x_exti.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c(106): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_EXTI_MODE(EXTI_InitStruct->EXTI_Mode));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c(174): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_EXTI_LINE(EXTI_Line));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c(190): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GET_EXTI_LINE(EXTI_Line));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c(212): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_EXTI_LINE(EXTI_Line));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c(229): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GET_EXTI_LINE(EXTI_Line));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c(252): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_EXTI_LINE(EXTI_Line));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c: 6 warnings, 0 errors
+compiling stm32f10x_dma.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c(111): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c(207): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c(297): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c(329): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c(356): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c(374): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c(439): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DMA_GET_FLAG(DMAy_FLAG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c(526): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DMA_CLEAR_FLAG(DMAy_FLAG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c(601): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DMA_GET_IT(DMAy_IT));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c(687): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DMA_CLEAR_IT(DMAy_IT));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c: 10 warnings, 0 errors
+compiling misc.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c(99): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c(117): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c(159): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_NVIC_VECTTAB(NVIC_VectTab));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c(178): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_NVIC_LP(LowPowerMode));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c(202): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c: 5 warnings, 0 errors
+compiling common.c...
+..\USER\SRC\common.c(33): warning:  #223-D: function "USART_GetFlagStatus" declared implicitly
+  	while(USART_GetFlagStatus(USART1,USART_FLAG_TC)==RESET); 
+..\USER\SRC\common.c(33): error:  #20: identifier "USART_FLAG_TC" is undefined
+  	while(USART_GetFlagStatus(USART1,USART_FLAG_TC)==RESET); 
+..\USER\SRC\common.c(34): warning:  #223-D: function "USART_SendData" declared implicitly
+      USART_SendData(USART1,(uint8_t)ch);   
+..\USER\SRC\common.c(103): error:  #20: identifier "USART_InitTypeDef" is undefined
+  	USART_InitTypeDef USART_InitStructure;
+..\USER\SRC\common.c(105): error:  #20: identifier "USART_WordLength_8b" is undefined
+  	USART_InitStructure.USART_WordLength = USART_WordLength_8b; //数据位8位
+..\USER\SRC\common.c(106): error:  #20: identifier "USART_StopBits_1" is undefined
+  	USART_InitStructure.USART_StopBits = USART_StopBits_1; //停止位1位
+..\USER\SRC\common.c(107): error:  #20: identifier "USART_Parity_No" is undefined
+  	USART_InitStructure.USART_Parity = USART_Parity_No; //无校验位
+..\USER\SRC\common.c(108): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
+  	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None; //无硬件流控
+..\USER\SRC\common.c(109): error:  #20: identifier "USART_Mode_Rx" is undefined
+  	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx; //收发模式
+..\USER\SRC\common.c(109): error:  #20: identifier "USART_Mode_Tx" is undefined
+  	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx; //收发模式
+..\USER\SRC\common.c(111): warning:  #223-D: function "USART_Init" declared implicitly
+  	USART_Init(USARTx, &USART_InitStructure);	//配置串口参数函数
+..\USER\SRC\common.c(120): warning:  #223-D: function "USART_Cmd" declared implicitly
+  	USART_Cmd(USARTx, ENABLE); //使能串口	
+..\USER\SRC\common.c(123): warning:  #223-D: function "USART_ClearFlag" declared implicitly
+  	USART_ClearFlag(USARTx, USART_FLAG_TXE);/* 清发送完成标志，Transmission Complete flag */ 
+..\USER\SRC\common.c(123): error:  #20: identifier "USART_FLAG_TXE" is undefined
+  	USART_ClearFlag(USARTx, USART_FLAG_TXE);/* 清发送完成标志，Transmission Complete flag */ 
+..\USER\SRC\common.c(136): warning:  #223-D: function "USART_SendData" declared implicitly
+  	USART_SendData(USARTx, ch);
+..\USER\SRC\common.c(137): warning:  #223-D: function "USART_GetFlagStatus" declared implicitly
+  	while(USART_GetFlagStatus(USARTx, USART_FLAG_TXE) == RESET){}
+..\USER\SRC\common.c(137): error:  #20: identifier "USART_FLAG_TXE" is undefined
+  	while(USART_GetFlagStatus(USARTx, USART_FLAG_TXE) == RESET){}
+..\USER\SRC\common.c(147): warning:  #223-D: function "USART_SendData" declared implicitly
+  		USART_SendData(USARTx, *str++);
+..\USER\SRC\common.c(148): warning:  #223-D: function "USART_GetFlagStatus" declared implicitly
+  		while(USART_GetFlagStatus(USARTx, USART_FLAG_TXE) == RESET){}	
+..\USER\SRC\common.c(148): error:  #20: identifier "USART_FLAG_TXE" is undefined
+  		while(USART_GetFlagStatus(USARTx, USART_FLAG_TXE) == RESET){}	
+..\USER\SRC\common.c: 9 warnings, 11 errors
+compiling main.c...
+..\USER\SRC\main.c(14): warning:  #177-D: variable "i"  was declared but never referenced
+  	 u8 i;
+..\USER\SRC\main.c: 1 warning, 0 errors
+compiling stm32f10x_crc.c...
+compiling stm32f10x_flash.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(259): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FLASH_LATENCY(FLASH_Latency));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(284): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FLASH_HALFCYCLEACCESS_STATE(FLASH_HalfCycleAccess));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(303): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FLASH_PREFETCHBUFFER_STATE(FLASH_PrefetchBuffer));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(423): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FLASH_ADDRESS(Page_Address));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(687): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FLASH_ADDRESS(Address));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(862): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FLASH_ADDRESS(Address));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(933): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_OB_DATA_ADDRESS(Address));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(982): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FLASH_WRPROT_PAGE(FLASH_Pages));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1053): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1123): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_OB_IWDG_SOURCE(OB_IWDG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1325): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FLASH_IT(FLASH_IT)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1402): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FLASH_GET_FLAG(FLASH_FLAG)) ;
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c(1462): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FLASH_CLEAR_FLAG(FLASH_FLAG)) ;
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c: 13 warnings, 0 errors
+compiling stm32f10x_dac.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c(121): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DAC_TRIGGER(DAC_InitStruct->DAC_Trigger));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c(176): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DAC_CHANNEL(DAC_Channel));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c(236): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DAC_CHANNEL(DAC_Channel));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c(263): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DAC_CHANNEL(DAC_Channel));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c(287): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c(317): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DAC_CHANNEL(DAC_Channel));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c(347): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DAC_ALIGN(DAC_Align));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c(372): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DAC_ALIGN(DAC_Align));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c(401): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DAC_ALIGN(DAC_Align));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c(435): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_DAC_CHANNEL(DAC_Channel));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c: 10 warnings, 0 errors
+compiling stm32f10x_cec.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c(140): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CEC_BIT_TIMING_ERROR_MODE(CEC_InitStruct->CEC_BitTimingMode)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c(167): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c(189): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c(202): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CEC_ADDRESS(CEC_OwnAddress));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c(216): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CEC_PRESCALER(CEC_Prescaler));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c(265): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c(297): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CEC_GET_FLAG(CEC_FLAG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c(354): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CEC_CLEAR_FLAG(CEC_FLAG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c(378): warning:  #223-D: function "assert_param" declared implicitly
+     assert_param(IS_CEC_GET_IT(CEC_IT));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c(413): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CEC_GET_IT(CEC_IT));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c: 10 warnings, 0 errors
+compiling stm32f10x_fsmc.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(105): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_NORSRAM_BANK(FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(132): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_NAND_BANK(FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(179): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_NORSRAM_BANK(FSMC_NORSRAMInitStruct->FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(267): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param( IS_FSMC_NAND_BANK(FSMC_NANDInitStruct->FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(331): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_WAIT_FEATURE(FSMC_PCCARDInitStruct->FSMC_Waitfeature));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(477): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_NORSRAM_BANK(FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(503): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_NAND_BANK(FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(540): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(566): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_NAND_BANK(FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(639): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_IT_BANK(FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(703): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_GETFLAG_BANK(FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(750): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_GETFLAG_BANK(FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(788): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_IT_BANK(FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c(836): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FSMC_IT_BANK(FSMC_Bank));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c: 14 warnings, 0 errors
+compiling stm32f10x_can.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(125): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(159): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(296): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_FILTER_NUMBER(CAN_FilterInitStruct->CAN_FilterNumber));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(431): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_BANKNUMBER(CAN_BankNumber));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(454): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(484): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(519): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(594): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(646): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(674): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(723): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(747): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(782): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(861): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(888): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(927): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(951): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(971): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(1006): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(1048): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(1147): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(1207): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c(1309): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_CAN_ALL_PERIPH(CANx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c: 23 warnings, 0 errors
+compiling stm32f10x_adc.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(182): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(223): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(302): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(327): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_DMA_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(357): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(382): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(396): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(420): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(434): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(460): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(485): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(514): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(539): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(594): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(689): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(711): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(737): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(763): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(803): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(827): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(852): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(877): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(934): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(998): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(1030): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(1057): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(1086): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(1111): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(1149): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(1170): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(1199): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(1231): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(1252): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c(1287): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_ADC_ALL_PERIPH(ADCx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c: 34 warnings, 0 errors
+compiling stm32f10x_gpio.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(111): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(178): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(286): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(308): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(324): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(346): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(361): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(377): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(397): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(420): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(437): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(466): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_EVENTOUT_PORT_SOURCE(GPIO_PortSource));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(486): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(554): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_REMAP(GPIO_Remap));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(613): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_EXTI_PORT_SOURCE(GPIO_PortSource));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c(632): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_GPIO_ETH_MEDIA_INTERFACE(GPIO_ETH_MediaInterface)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c: 16 warnings, 0 errors
+compiling stm32f10x_i2c.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(165): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(198): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(325): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(349): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(373): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(397): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(421): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(445): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(470): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(495): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(519): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(548): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(573): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(586): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(604): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(641): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(661): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(699): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(727): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(751): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(782): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(806): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(828): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(843): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(867): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(893): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(1037): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(1084): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(1139): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(1216): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(1252): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c(1311): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c: 32 warnings, 0 errors
+compiling stm32f10x_iwdg.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.c(95): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_IWDG_WRITE_ACCESS(IWDG_WriteAccess));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.c(115): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_IWDG_PRESCALER(IWDG_Prescaler));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.c(128): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_IWDG_RELOAD(Reload));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.c(165): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_IWDG_FLAG(IWDG_FLAG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.c: 4 warnings, 0 errors
+compiling stm32f10x_pwr.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c(127): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c(140): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c(162): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_PWR_PVD_LEVEL(PWR_PVDLevel));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c(181): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c(201): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_PWR_REGULATOR(PWR_Regulator));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c(265): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_PWR_GET_FLAG(PWR_FLAG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c(290): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_PWR_CLEAR_FLAG(PWR_FLAG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c: 7 warnings, 0 errors
+compiling stm32f10x_rcc.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(273): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_HSE(RCC_HSE));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(338): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_CALIBRATION_VALUE(HSICalibrationValue));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(357): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(383): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_PLL_SOURCE(RCC_PLLSource));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(404): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(568): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_SYSCLK_SOURCE(RCC_SYSCLKSource));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(612): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_HCLK(RCC_SYSCLK));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(638): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_PCLK(RCC_HCLK));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(664): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_PCLK(RCC_HCLK));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(703): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_IT(RCC_IT));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(731): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_USBCLK_SOURCE(RCC_USBCLKSource));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(770): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_ADCCLK(RCC_PCLK2));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(832): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_LSE(RCC_LSE));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(865): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(882): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_RTCCLK_SOURCE(RCC_RTCCLKSource));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(896): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1067): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_AHB_PERIPH(RCC_AHBPeriph));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1098): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1129): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1188): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1219): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1240): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1253): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1285): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_MCO(RCC_MCO));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1332): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_FLAG(RCC_FLAG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1406): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_GET_IT(RCC_IT));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c(1451): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RCC_CLEAR_IT(RCC_IT));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c: 27 warnings, 0 errors
+compiling stm32f10x_rtc.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c(93): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RTC_IT(RTC_IT));  
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c(163): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RTC_PRESCALER(PrescalerValue));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c(249): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RTC_GET_FLAG(RTC_FLAG)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c(276): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RTC_CLEAR_FLAG(RTC_FLAG)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c(295): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RTC_GET_IT(RTC_IT)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c(321): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_RTC_IT(RTC_IT));  
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c: 6 warnings, 0 errors
+compiling stm32f10x_sdio.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(186): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_CLOCK_EDGE(SDIO_InitStruct->SDIO_ClockEdge));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(238): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(254): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_POWER_STATE(SDIO_PowerState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(310): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_IT(SDIO_IT));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(334): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(351): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_CMD_INDEX(SDIO_CmdInitStruct->SDIO_CmdIndex));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(417): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_RESP(SDIO_RESP));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(436): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_DATA_LENGTH(SDIO_DataInitStruct->SDIO_DataLength));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(532): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(546): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(562): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_READWAIT_MODE(SDIO_ReadWaitMode));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(576): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(590): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(604): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(617): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(630): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(671): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_FLAG(SDIO_FLAG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(707): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_CLEAR_FLAG(SDIO_FLAG));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(748): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_GET_IT(SDIO_IT));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c(782): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SDIO_CLEAR_IT(SDIO_IT));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c: 20 warnings, 0 errors
+compiling stm32f10x_spi.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(122): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(163): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));   
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(227): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_23_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(430): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(454): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_23_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(486): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(524): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(550): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(566): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(584): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(608): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(634): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(650): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(666): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(693): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(717): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(735): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(770): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(807): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(835): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c(887): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_SPI_ALL_PERIPH(SPIx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c: 21 warnings, 0 errors
+compiling stm32f10x_tim.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(125): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(231): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(284): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(367): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(449): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(528): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(590): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_CHANNEL(TIM_ICInitStruct->TIM_Channel));  
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(659): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(715): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST2_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(809): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(834): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST2_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(875): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(912): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(940): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST4_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(967): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST9_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(992): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1011): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1039): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1080): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1121): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1153): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1179): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1203): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1233): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1272): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST5_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1319): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1343): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1367): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1391): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1412): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1436): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST2_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1461): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST4_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1486): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST5_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1513): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1538): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1562): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1586): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1610): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1636): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1661): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1686): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1711): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1737): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1761): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1785): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1809): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1832): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST2_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1856): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1879): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST1_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1903): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1927): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST1_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1951): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(1979): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2009): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST2_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2051): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2095): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2123): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2147): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2173): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2205): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST7_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2228): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2249): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2267): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2281): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2295): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2309): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2323): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2337): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2356): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2378): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2400): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2422): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2444): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2460): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST8_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2473): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST6_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2486): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx)); 
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2499): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_LIST3_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2512): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2525): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2560): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2603): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2637): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c(2679): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_TIM_ALL_PERIPH(TIMx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c: 83 warnings, 0 errors
+compiling stm32f10x_usart.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(133): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(184): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(306): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_123_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(354): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(393): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(451): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(479): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(502): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(521): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(550): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(569): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(595): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(612): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(628): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(644): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_123_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(664): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(683): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_123_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(708): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_123_PERIPH(USARTx));  
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(734): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(765): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(792): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(821): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(840): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(878): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(926): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(961): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c(1034): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_USART_ALL_PERIPH(USARTx));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c: 27 warnings, 0 errors
+compiling stm32f10x_wwdg.c...
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.c(122): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_WWDG_PRESCALER(WWDG_Prescaler));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.c(142): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_WWDG_WINDOW_VALUE(WindowValue));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.c(173): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_WWDG_COUNTER(Counter));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.c(188): warning:  #223-D: function "assert_param" declared implicitly
+    assert_param(IS_WWDG_COUNTER(Counter));
+..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.c: 4 warnings, 0 errors
+compiling core_cm3.c...
+compiling system_stm32f10x.c...
+compiling AD9833.c...
+..\USER\AD9833\AD9833.c(47): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+      GPIO_InitTypeDef GPIO_InitStructure;
+..\USER\AD9833\AD9833.c(49): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+..\USER\AD9833\AD9833.c(49): error:  #20: identifier "RCC_APB2Periph_GPIOB" is undefined
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+..\USER\AD9833\AD9833.c(51): error:  #20: identifier "GPIO_Pin_15" is undefined
+  	GPIO_InitStructure.GPIO_Pin = PIN_FSYNC|PIN_SCK|PIN_DAT|PIN_CS; 
+..\USER\AD9833\AD9833.c(51): error:  #20: identifier "GPIO_Pin_14" is undefined
+  	GPIO_InitStructure.GPIO_Pin = PIN_FSYNC|PIN_SCK|PIN_DAT|PIN_CS; 
+..\USER\AD9833\AD9833.c(51): error:  #20: identifier "GPIO_Pin_13" is undefined
+  	GPIO_InitStructure.GPIO_Pin = PIN_FSYNC|PIN_SCK|PIN_DAT|PIN_CS; 
+..\USER\AD9833\AD9833.c(51): error:  #20: identifier "GPIO_Pin_12" is undefined
+  	GPIO_InitStructure.GPIO_Pin = PIN_FSYNC|PIN_SCK|PIN_DAT|PIN_CS; 
+..\USER\AD9833\AD9833.c(52): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+      GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+..\USER\AD9833\AD9833.c(53): error:  #20: identifier "GPIO_Mode_Out_PP" is undefined
+      GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+..\USER\AD9833\AD9833.c(54): warning:  #223-D: function "GPIO_Init" declared implicitly
+      GPIO_Init(PORT_SCK, &GPIO_InitStructure);
+..\USER\AD9833\AD9833.c(90): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+  	SCK_1();
+..\USER\AD9833\AD9833.c(90): error:  #20: identifier "GPIO_Pin_14" is undefined
+  	SCK_1();
+..\USER\AD9833\AD9833.c(92): error:  #20: identifier "GPIO_Pin_15" is undefined
+  	FSYNC_1();
+..\USER\AD9833\AD9833.c(94): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
+  	FSYNC_0();
+..\USER\AD9833\AD9833.c(99): error:  #20: identifier "GPIO_Pin_13" is undefined
+  			DAT_1();
+..\USER\AD9833\AD9833.c(129): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
+  	CS_0();
+..\USER\AD9833\AD9833.c(129): error:  #20: identifier "GPIO_Pin_12" is undefined
+  	CS_0();
+..\USER\AD9833\AD9833.c(133): error:  #20: identifier "GPIO_Pin_14" is undefined
+  	    SCK_0();	
+..\USER\AD9833\AD9833.c(135): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+  	   	DAT_1();
+..\USER\AD9833\AD9833.c(135): error:  #20: identifier "GPIO_Pin_13" is undefined
+  	   	DAT_1();
+..\USER\AD9833\AD9833.c(143): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+     	CS_1();
+..\USER\AD9833\AD9833.c: 7 warnings, 14 errors
+".\OBJ\STM32F103RBT6.axf" - 42 Error(s), 400 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
+                ARM.CMSIS.5.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.1.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_STM32F103XX
+  D:\Software\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  D:\Software\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.1.1
+Target not created.
+Build Time Elapsed:  00:00:20
+</pre>
+</body>
+</html>
