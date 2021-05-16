@@ -223,6 +223,22 @@ void loop() {
   }
 }
 
+void loop_count() {
+  char buf[64];
+  while (1) {
+    u32 f = 0;
+    for (f = 1 * M; f <= 40 * M; f += M) {
+      sprintf(buf, "%lu\r\n", (unsigned long)f);
+      USART1_Puts(buf);
+      // set_wave(f, get_target(0.1, 0.49));
+			set_wave(f, get_target(0.2, 0.6));
+			// set_wave(f, 0x3fff);
+			// set_wave(f, get_target(0.107, wave_max_data[f / M] / 1000));
+      Delay_50ms(10);
+    }
+  }
+}
+
 int main(void) {
   u32 f = 0;
   u32 target = (u32)((double)0.10 / 0.49 * 0x3FFF);  // 10m
@@ -233,7 +249,7 @@ int main(void) {
 	GPIO_Init_AD9910();
   AD9910_Init();  // AD9910时钟的设置和辅助DAC设置 以及AD9910复位
   AD9910_Singal_Profile_Init();  // 单频PROFILE初始化
-  loop();
+  loop_count();
   while (1) {
     /*
     for (f = 1000000; f <= 40000000; f+=1000000) {

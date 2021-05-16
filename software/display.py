@@ -12,15 +12,16 @@ M = 1000000
 
 
 class Display:
-    WIDTH_UNIT = 30
+    WIDTH_UNIT = 20
     RANGE_UNIT = 40
-    HEIGHT = 700
+    HEIGHT = 300
+    # HEIGHT = 1000
     # VAL_MAX = 3.5
-    VAL_MAX = 1.2
+    VAL_MAX = 0.8
     FONT = ImageFont.truetype('C:/windows/fonts/Dengl.ttf', 20)
     REMOTE_SOCKET_HOST = "192.168.137.70"
     REMOTE_SOCKET_PORT = 80
-    DISPLAY_VALUE_STEP = 0.1
+    DISPLAY_VALUE_STEP = 0.25
 
     def __init__(self, root=None):
         self.root = root if root is not None else Tk()
@@ -108,7 +109,7 @@ class Display:
     def draw(self):
         size = (self.WIDTH_UNIT * self.RANGE_UNIT, self.HEIGHT)
         scalar = size[1] / self.VAL_MAX
-        im = Image.new("RGB", size, color='black')
+        im = Image.new("RGB", size, color='white')
         draw = ImageDraw.Draw(im)
         self.lock.acquire()
         # self.frames.sort(key=lambda x: x[1])
@@ -120,33 +121,33 @@ class Display:
             # if rect[0] != 0 and len(self.frames) == self.FRAME_SIZE:
             #     print(f'{data[0]} => {nxt[0]} rect: {rect}')
             # print(data[1])
-            draw.line(rect, fill='green', width=4)
+            draw.line(rect, fill='green', width=6)
         self.lock.release()
         # sx = size[0] - width * self.select
-        # draw.line((sx, 0, sx, size[1]), fill='white')
+        # draw.line((sx, 0, sx, size[1]), fill='black')
         return im
 
     def add_axes(self, im: Image):
-        offset = [50, 40]
+        offset = [80, 40]
         size = [im.size[0] + offset[0], im.size[1] + offset[1]]
-        base = Image.new("RGB", size, color='black')
+        base = Image.new("RGB", size, color='white')
         base.paste(im, (offset[0], 0))
         draw = ImageDraw.Draw(base)
-        draw.line((offset[0] - 2, 0, offset[0] - 2, im.size[1]), fill='white', width=2)
-        draw.line((offset[0] - 2, im.size[1] + 1, size[0], im.size[1] + 1), fill='white', width=2)
-        draw.text((55, 5), text="U/V", fill='white', font=self.FONT)
-        draw.text((size[0] - 90, im.size[1] - 40), text="freq/MHz", fill='white', font=self.FONT)
+        draw.line((offset[0] - 2, 0, offset[0] - 2, im.size[1]), fill='black', width=2)
+        draw.line((offset[0] - 2, im.size[1] + 1, size[0], im.size[1] + 1), fill='black', width=2)
+        draw.text((offset[0] + 20, 5), text="U/V", fill='black', font=self.FONT)
+        draw.text((size[0] - 90, im.size[1] - 40), text="freq/MHz", fill='black', font=self.FONT)
         for i in range(0, self.RANGE_UNIT, 5):
             draw.line((offset[0] + i * self.WIDTH_UNIT, size[1] - offset[1] + 2,
-                       offset[0] + i * self.WIDTH_UNIT, size[1] - offset[1] + 5), fill='white', width=2)
-            draw.text((offset[0] + i * self.WIDTH_UNIT, size[1] - offset[1] + 10), text=f"{i}", fill='white',
+                       offset[0] + i * self.WIDTH_UNIT, size[1] - offset[1] + 5), fill='black', width=2)
+            draw.text((offset[0] + i * self.WIDTH_UNIT, size[1] - offset[1] + 10), text=f"{i}", fill='black',
                       font=self.FONT)
         val = 0
         while val < self.VAL_MAX:
             draw.line((offset[0] - 5, im.size[1] * val / self.VAL_MAX,
-                       offset[0] - 1, im.size[1] * val / self.VAL_MAX), fill='white', width=2)
-            draw.text((offset[0] - 35, im.size[1] * val / self.VAL_MAX), text="%.1f" % (self.VAL_MAX - val),
-                      fill='white', font=self.FONT)
+                       offset[0] - 1, im.size[1] * val / self.VAL_MAX), fill='black', width=2)
+            draw.text((offset[0] - 55, im.size[1] * val / self.VAL_MAX), text="%.2f" % (self.VAL_MAX - val),
+                      fill='black', font=self.FONT)
             val += self.DISPLAY_VALUE_STEP
         return base
 
