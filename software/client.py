@@ -10,6 +10,7 @@ def start_tcp_client(ip, port, handler=None):
         tcp_client.connect((server_ip, server_port))
     except socket.error:
         print('fail to setup socket connection')
+    print('connected')
     if handler is not None:
         while True:
             data = tcp_client.recv(4096)
@@ -26,6 +27,7 @@ def branch(data: int):
 
 
 def handle_data(data):
+    print("raw", data)
     s = data.decode()
     if len(s) == 0:
         return
